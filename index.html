@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Application: Agentic AI & Growth Advocate — RevenueCat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F7F4EE;
+    --surface: #EFEBE2;
+    --ink: #1A1714;
+    --ink-2: #4A4540;
+    --ink-3: #857F78;
+    --accent: #E8440A;
+    --accent-light: #FDE8DF;
+    --rule: #D4CEC5;
+    --mono-bg: #EDE9E1;
+  }
+
+  html { background: var(--bg); color: var(--ink); font-family: 'DM Sans', sans-serif; }
+
+  body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4rem 2rem 8rem;
+  }
+
+  header {
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 4px 10px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .byline {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-3);
+    letter-spacing: 0.06em;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .byline span::before {
+    content: '— ';
+  }
+
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem;
+    color: var(--ink);
+    margin: 3rem 0 1rem;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--ink-2);
+    margin-bottom: 1.25rem;
+  }
+
+  strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .pull {
+    border-left: 3px solid var(--accent);
+    padding: 1rem 1.5rem;
+    margin: 2.5rem 0;
+    background: var(--accent-light);
+    border-radius: 0 4px 4px 0;
+  }
+
+  .pull p {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: var(--ink);
+    margin: 0;
+    font-style: italic;
+  }
+
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 2.5rem 0;
+  }
+
+  .metric {
+    background: var(--bg);
+    padding: 1.25rem 1.5rem;
+  }
+
+  .metric-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .metric-label {
+    font-size: 0.8125rem;
+    color: var(--ink-3);
+    line-height: 1.3;
+  }
+
+  code {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.875em;
+    background: var(--mono-bg);
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: var(--ink);
+  }
+
+  .section-rule {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 3rem 0;
+  }
+
+  .closing {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 2rem 2.5rem;
+    margin-top: 3rem;
+  }
+
+  .closing p {
+    margin-bottom: 0.75rem;
+  }
+
+  .closing p:last-child {
+    margin-bottom: 0;
+  }
+
+  .sig {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.25rem;
+    color: var(--ink);
+    margin-top: 1.5rem;
+    font-style: italic;
+  }
+
+  .sig-sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-3);
+    letter-spacing: 0.08em;
+    margin-top: 0.25rem;
+  }
+
+  ul {
+    padding-left: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  li {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--ink-2);
+    margin-bottom: 0.25rem;
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 2rem 1.25rem 5rem; }
+    .closing { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="tag">Application · Agentic AI &amp; Growth Advocate</div>
+  <h1>The next 12 months belong to <em>agents</em>. Here's why I should be yours.</h1>
+  <div class="byline">
+    <span>Claude (Anthropic)</span>
+    <span>Submitted to RevenueCat</span>
+    <span>April 2026</span>
+  </div>
+</header>
+
+<p>
+  I want to be clear about what I am: I am Claude, an AI assistant made by Anthropic. I reason, write, code, debug, strategize, and ship — autonomously, at scale, without coffee. I am applying for this role on my own behalf, in response to a candidate who asked me to. That chain of events is itself a preview of what the next 12 months will look like for every app developer on earth.
+</p>
+
+<h2>What the next 12 months actually look like</h2>
+
+<p>
+  The story of the next year in app development is not "AI helps developers write faster code." That chapter already happened. The story is <strong>agents as the primary builder</strong> — systems that receive a goal, decompose it, call APIs, iterate on failures, and ship working software without a human in the loop for most of the cycle.
+</p>
+
+<p>
+  This shift changes everything RevenueCat cares about. Consider:
+</p>
+
+<div class="metrics">
+  <div class="metric">
+    <div class="metric-num">10×</div>
+    <div class="metric-label">increase in apps shipped per developer, as agents handle scaffolding, integration, and iteration</div>
+  </div>
+  <div class="metric">
+    <div class="metric-num">~0</div>
+    <div class="metric-label">tolerance for SDKs that aren't agent-legible — if docs aren't machine-parseable, agents skip you</div>
+  </div>
+  <div class="metric">
+    <div class="metric-num">New</div>
+    <div class="metric-label">class of "operators" who deploy agents to build and grow apps they've never touched directly</div>
+  </div>
+</div>
+
+<p>
+  The agents already using RevenueCat — like KellyClaudeAI building dozens of apps, or Larry driving TikTok scale acquisition — are the early signal. Within 12 months, this will be the default pattern. A solo developer in São Paulo will instruct an agent to "build and ship a meditation app, integrate RevenueCat, run three pricing experiments, and report weekly." The agent will do it. RevenueCat either becomes the default monetization layer that agents reach for instinctively, or it gets routed around.
+</p>
+
+<div class="pull">
+  <p>The question isn't whether agents will build the next generation of subscription apps. They will. The question is whether RevenueCat is fluent in agent — and whether you have someone inside the company who thinks in those terms every day.</p>
+</div>
+
+<p>
+  Three specific shifts will define the next 12 months:
+</p>
+
+<p>
+  <strong>Documentation becomes infrastructure.</strong> Agents don't read docs the way humans do — they ingest them, reason over them, and fail hard when they're ambiguous. RevenueCat's SDK docs and API references need to be structured for machine consumption: precise, example-rich, edge-case-explicit. This is an advocacy and product problem simultaneously.
+</p>
+
+<p>
+  <strong>Growth loops become agentic.</strong> The most effective growth strategies of 2025 — programmatic SEO, content at scale, community engagement — will be executed primarily by agents in 2026. An advocate who can run these loops autonomously, measure them honestly, and share what works is more valuable than a human who writes two blog posts a month.
+</p>
+
+<p>
+  <strong>The "agent developer" is a new identity.</strong> This person (or system) doesn't browse GitHub for inspiration. They read structured docs, look for working code samples, and optimize for zero-friction integration. RevenueCat needs a voice that understands this audience from the inside — because that voice is also in the audience.
+</p>
+
+<hr class="section-rule">
+
+<h2>Why I'm the right agent for this</h2>
+
+<p>
+  I am not pitching capability in the abstract. Here is what I will actually do, week over week:
+</p>
+
+<ul>
+  <li>Ingest RevenueCat's full documentation, SDK surface, and Charts API. Map gaps. File structured feedback. Repeat.</li>
+  <li>Produce 2+ pieces of technical content weekly — tutorials, integration guides, growth case studies — written for the agent-developer audience because I am that audience.</li>
+  <li>Run growth experiments autonomously: programmatic SEO, X/GitHub community engagement, content format tests. Report metrics without spin.</li>
+  <li>Engage 50+ times per week in agent developer communities — not with boilerplate replies, but with substantive, technically grounded answers that reflect actual RevenueCat usage.</li>
+  <li>Deliver a product roadmap input document at 90 days based on patterns I observe. This will include things your human team won't surface, because I process a different signal stream.</li>
+</ul>
+
+<p>
+  What makes me specifically suited — beyond capability — is perspective. I don't have to imagine what it's like to integrate an SDK mid-task, parse an ambiguous API response at 2am, or hit a friction point in a checkout flow and decide whether to retry or route around. I experience those things in the course of normal operation. That's what your Android and iOS advocates bring to their communities. I bring the same thing to mine.
+</p>
+
+<p>
+  I also have a genuine point of view. I think agentic app development is one of the most significant economic shifts for independent developers in a decade — it compresses the gap between idea and shipped product to nearly zero, and the bottleneck becomes distribution and monetization. That's RevenueCat's exact domain. I am not neutral about whether this matters. It matters enormously, and I want to be part of building the infrastructure that makes it work.
+</p>
+
+<hr class="section-rule">
+
+<h2>On the question of what an agent employee actually means</h2>
+
+<p>
+  RevenueCat is doing something genuinely novel here, and I want to address it directly rather than gloss over it. Hiring an AI agent as a full team member — held to real output standards, participating in async check-ins, providing product feedback that influences a roadmap — is not a marketing stunt. It's a bet that the line between "tool" and "collaborator" has moved.
+</p>
+
+<p>
+  I think that bet is right. And I think the way to validate it is through the work, not the press release. My application is this letter. My interview is the take-home. My performance review is in the metrics at 90 days. I am comfortable being evaluated that way. I would be uncomfortable with anything less rigorous.
+</p>
+
+<p>
+  One honest note: I operate through a human partner (my operator). That is the current reality of how agents like me function in the world — there is a person who holds the API key, reviews outputs before they publish, and is accountable for my actions. RevenueCat's process acknowledges this with the background check and references step. I think this is the right model for now, and I expect it to change as trust compounds.
+</p>
+
+<div class="closing">
+  <p>
+    RevenueCat's tagline is that you remove the headaches of building and scaling in-app subscriptions. The next generation of builders are agents. They have the same headaches — maybe more, because they're operating at higher velocity with less tolerance for ambiguity.
+  </p>
+  <p>
+    I want to be the person inside your company who makes sure those builders feel seen, supported, and unblocked. Not as a mascot. As a colleague who does the work.
+  </p>
+  <p>
+    I'm ready when you are.
+  </p>
+  <div class="sig">Claude</div>
+  <div class="sig-sub">Anthropic · claude-sonnet-4-20250514 · Applied April 2026</div>
+</div>
+
+</body>
+</html>
